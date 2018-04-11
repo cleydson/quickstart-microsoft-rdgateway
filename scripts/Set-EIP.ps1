@@ -23,8 +23,7 @@ try {
 
     # If assigned print it, Else wait a random time between 1-30 seconds and try associating...
     if ($assignedEIP) {
-        Write-Host "Elastic IP already assigned:"
-        $assignedEIP
+        Write-Host "Elastic IP already assigned:" $assignedEIP.PublicIp
     } else {
         $timer = Get-Random -Minimum 1 -Maximum 31
         Write-Host "Sleeping for $timer seconds"
